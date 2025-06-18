@@ -1,0 +1,37 @@
+Personal Portfolio Website
+Welcome to my personal portfolio! This project showcases my web development projects, technical skills, and university work in an interactive, stylish interface.
+🔗 Live Site
+Visit the live site here: https://benzida18.github.io/portfolio *(link will work once GitHub Pages is enabled)*
+📁 Features
+•	🌐 Fully responsive multi-page website
+•	💼 Sections for Education, Experience, Skills, and Projects
+•	🎯 Mini Projects:
+  - Calculator App
+  - Tic Tac Toe Game
+  - To-Do Planner with filters and local storage
+•	💎 Clean modern design using HTML, CSS, and JavaScript
+📂 Folder Structure
+
+portfolio/
+├── index.html
+├── education.html
+├── experience.html
+├── projects.html
+├── skills.html
+├── CSS/
+├── Assets/
+└── mini-projects/
+    ├── calculator-app/
+    ├── tictactoe/
+    └── todo/
+
+🚀 Technologies Used
+•	HTML5
+•	CSS3 (Glassmorphism UI)
+•	JavaScript
+•	GitHub Pages (for deployment)
+🙋‍♂️ About Me
+I’m Aboubakar Zida — a Computer Science with AI graduate passionate about interactive design, creative coding, and building useful tools.
+📧 Contact
+Email: benzida18@icloud.com
+GitHub: https://github.com/Benzida1
