@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience | Aboubakar Zida</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+
+<header>
+    <div class="topnav">
+        <a href="index.html">🏠 Home</a>
+        <a href="education.html">📘 Education</a>
+        <a href="experience.html">💼 Experience</a>
+        <a href="skills.html">🛠️ Skills</a>
+        <a href="projects.html">📂 Projects</a>
+    </div>
+    <h1>Experience</h1>
+    <p>Professional roles and leadership contributions</p>
+</header>
+
+<section id="experience" class="fade-in-section">
+    <div class="card-grid">
+
+        <div class="edu-card fade-in-section">
+            <h3>Supervisor — Pure</h3>
+            <p><strong>Dates:</strong> Jan 2023 – Sep 2025</p>
+            <div class="edu-details">
+                <p>Managed day-to-day store operations, ensuring smooth service and adherence to company policies.</p>
+                <p>Led and motivated a team of 10+ employees, maintaining high performance and morale.</p>
+                <p>Delivered onboarding and ongoing training to new team members.</p>
+                <p>Resolved customer issues professionally, maintaining high satisfaction rates.</p>
+                <p>Oversaw shift scheduling, stock levels, and compliance with health and safety protocols.</p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Sales Ambassador — Ginger Promotion</h3>
+            <p><strong>Dates:</strong> Jun 2019 – Aug 2021</p>
+            <div class="edu-details">
+                <p>Delivered successful face-to-face sales campaigns for brands like Gousto and HelloFresh.</p>
+                <p>Developed persuasive pitches and consistently met or exceeded campaign targets.</p>
+                <p>Built customer loyalty through excellent communication and service.</p>
+                <p>Facilitated team goals by sharing strategies and feedback with colleagues.</p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Customer Assistant — Blue Inc</h3>
+            <p><strong>Dates:</strong> Feb 2018 – Feb 2019</p>
+            <div class="edu-details">
+                <p>Provided helpful and personalised support to customers.</p>
+                <p>Maintained shop floor standards and processed transactions efficiently.</p>
+                <p>Influenced a positive team environment and contributed to improved customer experience.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Aboubakar Zida</p>
+    <p>📧 benzida18@icloud.com</p>
+    <p>
+        🔗
+        <a href="https://github.com/YOUR_USERNAME" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+        <a href="https://www.linkedin.com/in/aboubakarzida" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>

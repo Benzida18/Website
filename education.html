@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education | Aboubakar Zida</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+
+<header>
+    <div class="topnav">
+        <a href="index.html">🏠 Home</a>
+        <a href="education.html">📘 Education</a>
+        <a href="experience.html">💼 Experience</a>
+        <a href="skills.html">🛠️ Skills</a>
+        <a href="projects.html">📂 Projects</a>
+    </div>
+    <h1>Education</h1>
+    <p>My academic background and qualifications</p>
+</header>
+
+<section id="education" class="fade-in-section">
+    <div class="card-grid">
+
+        <div class="edu-card fade-in-section">
+            <h3>University of Kent</h3>
+            <p><strong>Degree:</strong> BSc (Hons) Computer Science with AI</p>
+            <div class="edu-details">
+                <p><strong>Graduated:</strong> July 2025</p>
+                <p><strong>Grade:</strong> 2:1 (Upper Second Class Honours)</p>
+                <p><strong>Modules:</strong> Machine Learning, Software Engineering, Robotics, Databases</p>
+                <p><strong>Activities:</strong> Final-year project in AI pathfinding, Hackathons, GitHub portfolio</p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Sixth Form</h3>
+            <p><strong>Qualification:</strong> Level 3 Extended Diploma (equivalent to 3 A-Levels)</p>
+            <div class="edu-details">
+                <p><strong>Grade:</strong> D*DD</p>
+                <p><strong>Subjects:</strong> Computing</p>
+                <p><strong>Year:</strong> 2016 – 2019</p>
+                <p><strong>Clubs:</strong> Coding Club, Business Pitch Competitions, Football</p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Secondary School</h3>
+            <p><strong>Qualification:</strong> GCSEs</p>
+            <div class="edu-details">
+                <p><strong>Subjects & Grades:</strong></p>
+                <ul>
+                    <li>Maths – B</li>
+                    <li>English – C</li>
+                    <li>French – A</li>
+                    <li>IT – B</li>
+                </ul>
+                <p><strong>Year:</strong> 2013 – 2016</p>
+                <p><strong>Highlights:</strong> Team Leader, Debate Club, Peer Mentor</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Aboubakar Zida</p>
+    <p>📧 benzida18@icloud.com</p>
+    <p>
+        🔗
+        <a href="https://github.com/YOUR_USERNAME" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a> |
+        <a href="https://www.linkedin.com/in/aboubakarzida" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>

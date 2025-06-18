@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Planner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="todo-container">
+    <h1>To-Do Planner</h1>
+
+    <div class="inputs">
+        <input type="text" id="taskInput" placeholder="Enter a new task..." />
+        <input type="date" id="taskDate" />
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('today')">Today</button>
+        <button onclick="filterTasks('upcoming')">Upcoming</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <a href="../../projects.html" class="return-link">← Return to Projects</a>
+</div>
+
+<script>
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function saveTasks() {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const taskDate = document.getElementById("taskDate");
+        if (taskInput.value === "" || !taskDate.value) return;
+
+        tasks.push({
+            text: taskInput.value,
+            date: taskDate.value,
+            completed: false
+        });
+
+        taskInput.value = "";
+        taskDate.value = "";
+        saveTasks();
+        renderTasks();
+    }
+
+    function toggleComplete(index) {
+        tasks[index].completed = !tasks[index].completed;
+        saveTasks();
+        renderTasks();
+    }
+
+    function removeTask(index) {
+        tasks.splice(index, 1);
+        saveTasks();
+        renderTasks();
+    }
+
+    function renderTasks(filter = "all") {
+        const list = document.getElementById("taskList");
+        list.innerHTML = "";
+
+        const today = new Date().toISOString().split("T")[0];
+
+        tasks.forEach((task, i) => {
+            if (
+                (filter === "today" && task.date !== today) ||
+                (filter === "upcoming" && task.date <= today)
+            ) return;
+
+            const li = document.createElement("li");
+            li.className = "task-item";
+            if (task.completed) li.classList.add("completed");
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = task.completed;
+            checkbox.onclick = () => toggleComplete(i);
+
+            const label = document.createElement("span");
+            label.textContent = `${task.text} — ${task.date}`;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "✕";
+            deleteBtn.onclick = () => removeTask(i);
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            li.appendChild(deleteBtn);
+            list.appendChild(li);
+        });
+    }
+
+    function filterTasks(type) {
+        renderTasks(type);
+    }
+
+    renderTasks();
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Aboubakar Zida</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+<header>
+  <div class="topnav">
+    <a href="index.html">🏠 Home</a>
+    <a href="education.html">📘 Education</a>
+    <a href="experience.html">💼 Experience</a>
+    <a href="skills.html">🛠️ Skills</a>
+    <a href="projects.html">📂 Projects</a>
+  </div>
+  <h1>Skills</h1>
+  <p>Technical tools and soft skills I've developed</p>
+</header>
+
+<section id="skills" class="fade-in-section">
+  <div class="card-grid">
+
+    <div class="edu-card fade-in-section">
+      <h3>HTML & CSS</h3>
+      <p><strong>Web Design</strong></p>
+      <div class="edu-details">
+        <p>Built responsive layouts using HTML5 and styled them with modern CSS3 techniques. Comfortable with Flexbox and Grid.</p>
+      </div>
+    </div>
+
+    <div class="edu-card fade-in-section">
+      <h3>JavaScript</h3>
+      <p><strong>Interactivity</strong></p>
+      <div class="edu-details">
+        <p>Used for creating dynamic web components and animations. Able to manipulate the DOM and write event-driven logic.</p>
+      </div>
+    </div>
+
+    <div class="edu-card fade-in-section">
+      <h3>Java</h3>
+      <p><strong>Object-Oriented Programming</strong></p>
+      <div class="edu-details">
+        <p>Applied Java for backend development, algorithms, and class-based structures in academic and personal projects.</p>
+      </div>
+    </div>
+
+    <div class="edu-card fade-in-section">
+      <h3>Python</h3>
+      <p><strong>Scripting & AI</strong></p>
+      <div class="edu-details">
+        <p>Used for automation, data manipulation, and AI coursework, including machine learning experiments using scikit-learn.</p>
+      </div>
+    </div>
+
+    <div class="edu-card fade-in-section">
+      <h3>Communication</h3>
+      <p><strong>Team Collaboration</strong></p>
+      <div class="edu-details">
+        <p>Experienced in working within diverse teams and conveying complex ideas clearly during meetings and presentations.</p>
+      </div>
+    </div>
+
+    <div class="edu-card fade-in-section">
+      <h3>Problem Solving</h3>
+      <p><strong>Critical Thinking</strong></p>
+      <div class="edu-details">
+        <p>Demonstrated through debugging, improving workflows, and resolving issues during coding projects and team work.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Aboubakar Zida</p>
+  <p>📧 benzida18@icloud.com</p>
+  <p>🔗 <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/YOUR_LINK" target="_blank">LinkedIn</a></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in-section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>

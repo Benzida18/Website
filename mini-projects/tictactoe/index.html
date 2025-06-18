@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a href="../../projects.html" class="home-button">← Back to Projects</a>
+
+<h1>Tic Tac Toe</h1>
+
+<div class="container">
+  <div id="board" class="board"></div>
+  <div id="message" class="message">Player X's turn</div>
+  <button onclick="resetGame()">Reset</button>
+</div>
+
+<script>
+  const board = document.getElementById("board");
+  const messageBox = document.getElementById("message");
+  let cells = ["", "", "", "", "", "", "", "", ""];
+  let currentPlayer = "X";
+  let gameActive = true;
+
+  function renderBoard() {
+    board.innerHTML = "";
+    cells.forEach((cell, i) => {
+      const div = document.createElement("div");
+      div.classList.add("cell");
+      div.textContent = cell;
+      if (cell) div.classList.add("placed");
+      div.onclick = () => makeMove(i, div);
+      board.appendChild(div);
+    });
+  }
+
+  function makeMove(i, div) {
+    if (!gameActive || cells[i]) return;
+    cells[i] = currentPlayer;
+    div.classList.add("placed");
+    renderBoard();
+    checkWinner();
+  }
+
+  function checkWinner() {
+    const wins = [
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
+    ];
+    for (let combo of wins) {
+      const [a,b,c] = combo;
+      if (cells[a] && cells[a] === cells[b] && cells[b] === cells[c]) {
+        gameActive = false;
+        highlightWinner(combo);
+        messageBox.textContent = `🎉 Player ${cells[a]} wins!`;
+        return;
+      }
+    }
+    if (!cells.includes("")) {
+      gameActive = false;
+      messageBox.textContent = "🤝 It's a draw!";
+    } else {
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      messageBox.textContent = `Player ${currentPlayer}'s turn`;
+    }
+  }
+
+  function highlightWinner(combo) {
+    const allCells = document.querySelectorAll(".cell");
+    combo.forEach(i => allCells[i].classList.add("winner"));
+  }
+
+  function resetGame() {
+    cells = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    gameActive = true;
+    messageBox.textContent = `Player X's turn`;
+    renderBoard();
+  }
+
+  renderBoard();
+</script>
+</body>
+</html>

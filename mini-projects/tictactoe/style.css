@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #d7e9f7, #f0f6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #002b5c;
+}
+
+a.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 51, 102, 0.85);
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+a.home-button:hover {
+    background: rgba(0, 51, 102, 1);
+}
+
+h1 {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 12px;
+    justify-content: center;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: #ffffffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    background-color: #eaf2fa;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: rgba(0, 51, 102, 0.85);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 51, 102, 1);
+    transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

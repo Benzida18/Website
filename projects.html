@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Aboubakar Zida</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header>
+    <div class="topnav">
+        <a href="index.html">🏠 Home</a>
+        <a href="education.html">📘 Education</a>
+        <a href="experience.html">💼 Experience</a>
+        <a href="skills.html">🛠️ Skills</a>
+        <a href="projects.html">📂 Projects</a>
+    </div>
+    <h1>Projects</h1>
+    <p>A selection of my development and university work</p>
+</header>
+
+<!-- Main academic/project section -->
+<section class="fade-in-section">
+    <div class="card-grid">
+
+        <div class="edu-card fade-in-section">
+            <h3>FlickFinder Movie App</h3>
+            <p><strong>Java, SQL, REST API</strong></p>
+            <div class="edu-details">
+                <p>
+                    Built a responsive movie search web application that fetches data from a public API. Implemented user accounts, a watchlist, and a recommendation system. Fully integrated with MySQL for persistent data.
+                </p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Robot Path Planning</h3>
+            <p><strong>ROS, Gazebo, A*</strong></p>
+            <div class="edu-details">
+                <p>
+                    Designed and tested pathfinding algorithms (Dijkstra, A*) in a Gazebo simulation for autonomous robot navigation. Integrated with RViz and SLAM for full environmental mapping and decision making.
+                </p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>AI Text Classifier</h3>
+            <p><strong>Python, Scikit-learn</strong></p>
+            <div class="edu-details">
+                <p>
+                    Developed a text classification system to predict categories from text inputs. Trained using TF-IDF and Naïve Bayes. Evaluated performance using accuracy, precision, and recall metrics.
+                </p>
+            </div>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Personal Portfolio</h3>
+            <p><strong>HTML, CSS, JS</strong></p>
+            <div class="edu-details">
+                <p>
+                    This very site! Designed and coded from scratch to showcase my journey, skills, and key projects using consistent UI/UX, responsive layout, and hover-based interactions.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Mini Projects Section -->
+<section class="fade-in-section">
+    <h2 style="text-align:center; margin-top: 40px;">Mini Projects</h2>
+    <div class="card-grid">
+
+        <div class="edu-card fade-in-section">
+            <h3>Tic Tac Toe</h3>
+            <p>A simple interactive game using HTML, CSS, and JavaScript with logic for win conditions and reset functionality.</p>
+            <a href="./mini-projects/tictactoe/index.html" target="_blank">🎮 Play Game</a>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>To-Do List</h3>
+            <p>A minimal to-do list app that lets you add, complete, and remove tasks. Made with HTML, CSS, and JS.</p>
+            <a href="./mini-projects/todo/index.html" target="_blank">📝 Try It</a>
+        </div>
+
+        <div class="edu-card fade-in-section">
+            <h3>Calculator App</h3>
+            <p>A clean and simple calculator app styled with gradient backgrounds and modern buttons. Uses HTML, CSS, and JS.</p>
+            <a href="./mini-projects/calculator-app/index.html" target="_blank">🧮 View App</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Aboubakar Zida</p>
+    <p>📧 benzida18@icloud.com</p>
+    <p>
+        🔗
+        <a href="https://github.com/YOUR_USERNAME" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a> |
+        <a href="https://www.linkedin.com/in/aboubakarzida" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
